@@ -11,8 +11,6 @@ const HomePage = () => {
     getAllProducs();
   }, [getAllProducs]);
 
-  console.log("products", products);
-
   return (
     <Container maxW={"container.xl"} py={12}>
       <VStack spacing={12}>
@@ -27,7 +25,7 @@ const HomePage = () => {
           </Box>{" "}
           🚀
         </Text>
-  
+
         {/* Product Grid */}
         <SimpleGrid
           columns={{
@@ -42,7 +40,7 @@ const HomePage = () => {
             <ProductCard key={product._id} product={product} />
           ))}
         </SimpleGrid>
-  
+
         {/* No Products Message */}
         {products.length === 0 && (
           <Box textAlign={"center"} mt={8}>
@@ -75,7 +73,6 @@ const HomePage = () => {
       </VStack>
     </Container>
   );
-  
 };
 
 export default HomePage;
