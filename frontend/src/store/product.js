@@ -13,7 +13,8 @@ export const useProductStore = create((set) => ({
 
     try {
       const { data } = await axios.post(
-        "http://localhost:8000/api/v1/products/addProduct",
+        // "http://localhost:8000/api/v1/products/addProduct",
+        "https://itemmanager-1.onrender.com/api/v1/products/addProduct",
         newProduct,
         {
           headers: { "Content-Type": "application/json" },
@@ -36,7 +37,8 @@ export const useProductStore = create((set) => ({
   getAllProducs: async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:8000/api/v1/products/allProducts"
+        // "http://localhost:8000/api/v1/products/allProducts"
+        "https://itemmanager-1.onrender.com/api/v1/products/allProducts"
       );
       set({ products: data.data });
     } catch (error) {
@@ -48,7 +50,8 @@ export const useProductStore = create((set) => ({
   deleteProduct: async (pid) => {
     try {
       const { data } = await axios.delete(
-        `http://localhost:8000/api/v1/products/deleteProduct/${pid}`
+        // `http://localhost:8000/api/v1/products/deleteProduct/${pid}`
+        `https://itemmanager-1.onrender.com/api/v1/products/deleteProduct/${pid}`
       );
 
       if (!data.success) {
@@ -75,7 +78,8 @@ export const useProductStore = create((set) => ({
   updateProduct: async (pid, updatedProduct) => {
     try {
       const { data } = await axios.put(
-        `http://localhost:8000/api/v1/products/updateProduct/${pid}`,
+        // `http://localhost:8000/api/v1/products/updateProduct/${pid}`,
+        `https://itemmanager-1.onrender.com/api/v1/products/updateProduct/${pid}`,
         updatedProduct,
         {
           headers: {
