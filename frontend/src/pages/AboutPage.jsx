@@ -15,6 +15,7 @@ const AboutPage = () => {
       minHeight="100vh" // Ensure the box takes the full viewport height
       display="flex"
       flexDirection="column"
+      py={150}
     >
       <Box flex="1" py={12} bg={useColorModeValue("gray.50", "gray.900")}>
         <Container maxW={"container.lg"}>

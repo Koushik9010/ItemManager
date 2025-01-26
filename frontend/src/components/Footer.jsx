@@ -1,9 +1,9 @@
+import { Link } from "react-router-dom";
 import {
   Box,
   Container,
   Flex,
   HStack,
-  Link,
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
@@ -26,32 +26,42 @@ const Footer = () => {
         >
           {/* Left Section: Copyright Text */}
           <Text fontSize={"sm"} color={color} textAlign={"center"}>
-            © {new Date().getFullYear()} ItemManager. All rights reserved.
+            © {new Date().getFullYear()}{" "}
+            <Link to="/" style={{ textDecoration: "underline" }}>
+              ItemManager
+            </Link>
+            . All rights reserved.
           </Text>
 
           {/* Right Section: Navigation Links */}
           <HStack spacing={6}>
             <Link
-              href="/about"
-              fontSize={"sm"}
-              color={color}
-              _hover={{ color: "blue.500", textDecoration: "underline" }}
+              to="/about"
+              style={{ color: color, textDecoration: "none" }}
+              onMouseEnter={(e) =>
+                (e.target.style.textDecoration = "underline")
+              }
+              onMouseLeave={(e) => (e.target.style.textDecoration = "none")}
             >
               About
             </Link>
             <Link
-              href="/contact"
-              fontSize={"sm"}
-              color={color}
-              _hover={{ color: "blue.500", textDecoration: "underline" }}
+              to="/contact"
+              style={{ color: color, textDecoration: "none" }}
+              onMouseEnter={(e) =>
+                (e.target.style.textDecoration = "underline")
+              }
+              onMouseLeave={(e) => (e.target.style.textDecoration = "none")}
             >
               Contact
             </Link>
             <Link
-              href="/privacy"
-              fontSize={"sm"}
-              color={color}
-              _hover={{ color: "blue.500", textDecoration: "underline" }}
+              to="/privacy"
+              style={{ color: color, textDecoration: "none" }}
+              onMouseEnter={(e) =>
+                (e.target.style.textDecoration = "underline")
+              }
+              onMouseLeave={(e) => (e.target.style.textDecoration = "none")}
             >
               Privacy Policy
             </Link>
